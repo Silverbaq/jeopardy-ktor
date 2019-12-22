@@ -50,7 +50,7 @@ fun Application.module(testing: Boolean = false) {
         }
 
         gameboard()
-        gamesetup(teamRepository, categoryRepository)
+        gamesetup(teamRepository, categoryRepository, jeopardyServer)
         teams(teamRepository)
         categories(categoryRepository)
         answer(answerRepository)

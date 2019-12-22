@@ -2,6 +2,13 @@
 
 <@b.page>
     <div class="row">
+        <form method="post" action="/gamesetup">
+            <input type="hidden" name="action" value="start">
+            <input type="submit" value="Run"/>
+        </form>
+    </div>
+
+    <div class="row">
         <div class="col-md-6">
             <p>Teams:</p>
             <div class="panel-body">

@@ -2,6 +2,7 @@ package dk.w4.webapp
 
 import dk.w4.Repository.CategoryRepository
 import dk.w4.Repository.TeamRepository
+import dk.w4.gameserver.Jeopardy
 import dk.w4.model.Category
 import dk.w4.model.Team
 import dk.w4.redirect
@@ -19,11 +20,23 @@ const val GAMESETUP = "/gamesetup"
 @Location(GAMESETUP)
 class GameSetup
 
-fun Route.gamesetup(teamDB: TeamRepository, categoryRepository: CategoryRepository) {
+fun Route.gamesetup(teamDB: TeamRepository, categoryRepository: CategoryRepository, jeopardyServer: Jeopardy) {
     get<GameSetup> {
         val teams = teamDB.getAll()
         val categories = categoryRepository.getAll()
         call.respond(FreeMarkerContent("gamesetup.ftl", mapOf("teams" to teams, "categories" to categories)))
+    }
+
+    post<GameSetup> {
+        val params = call.receiveParameters()
+        val action = params["action"] ?: throw IllegalArgumentException("Missing parameter: action")
+        when (action) {
+            "start" -> {
+                val teams = teamDB.getAll()
+                val categories = categoryRepository.getAll()
+                jeopardyServer.startRound(categories, teams)
+            }
+        }
     }
 }
 
