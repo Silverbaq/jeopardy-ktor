@@ -106,7 +106,7 @@ function createTeamCard(name, points) {
 
 function generateGameTable(categories) {
     var table = document.createElement("table")
-    table.className = "table"
+    table.className = "table table-bordered text-center"
 
     var tableHead = document.createElement("thead")
     var headerRow = document.createElement("tr")
@@ -116,10 +116,40 @@ function generateGameTable(categories) {
     var tableBody = document.createElement("tbody")
     table.append(tableBody)
 
+    var tr1 = document.createElement("tr")
+    var tr2 = document.createElement("tr")
+    var tr3 = document.createElement("tr")
+    var tr4 = document.createElement("tr")
+    var tr5 = document.createElement("tr")
+
+    tableBody.append(tr1)
+    tableBody.append(tr2)
+    tableBody.append(tr3)
+    tableBody.append(tr4)
+    tableBody.append(tr5)
+
     categories.forEach(function (value) {
         var th = document.createElement("th")
         th.textContent = value["name"]
         tableHead.append(th)
+
+        var td1 = document.createElement("td")
+        var td2 = document.createElement("td")
+        var td3 = document.createElement("td")
+        var td4 = document.createElement("td")
+        var td5 = document.createElement("td")
+
+        if (!value["answers"][0]["done"]) td1.textContent = value["answers"][0]["points"]
+        if (!value["answers"][1]["done"]) td2.textContent = value["answers"][1]["points"]
+        if (!value["answers"][2]["done"]) td3.textContent = value["answers"][2]["points"]
+        if (!value["answers"][3]["done"]) td4.textContent = value["answers"][3]["points"]
+        if (!value["answers"][4]["done"]) td5.textContent = value["answers"][4]["points"]
+
+        tr1.append(td1)
+        tr2.append(td2)
+        tr3.append(td3)
+        tr4.append(td4)
+        tr5.append(td5)
     })
 
 

@@ -30,6 +30,79 @@ object DatabaseFactory {
             Categories.insert{
                 it[name]  ="something"
             }
+            Categories.insert{
+                it[name]  ="something else"
+            }
+            Answers.insert {
+                it[answer]= "what what what"
+                it[question]= "then something"
+                it[points] = 100
+                it[categoryId] = 1
+                it[done] = false
+            }
+            Answers.insert {
+                it[answer]= "what what what"
+                it[question]= "then something"
+                it[points] = 200
+                it[categoryId] = 1
+                it[done] = false
+            }
+            Answers.insert {
+                it[answer]= "what what what"
+                it[question]= "then something"
+                it[points] = 300
+                it[categoryId] = 1
+                it[done] = true
+            }
+            Answers.insert {
+                it[answer]= "what what what"
+                it[question]= "then something"
+                it[points] = 400
+                it[categoryId] = 1
+                it[done] = false
+            }
+            Answers.insert {
+                it[answer]= "what what what"
+                it[question]= "then something"
+                it[points] = 500
+                it[categoryId] = 1
+                it[done] = false
+            }
+            Answers.insert {
+                it[answer]= "what what what"
+                it[question]= "then something"
+                it[points] = 100
+                it[categoryId] = 2
+                it[done] = true
+            }
+            Answers.insert {
+                it[answer]= "what what what"
+                it[question]= "then something"
+                it[points] = 200
+                it[categoryId] = 2
+                it[done] = false
+            }
+            Answers.insert {
+                it[answer]= "what what what"
+                it[question]= "then something"
+                it[points] = 300
+                it[categoryId] = 2
+                it[done] = false
+            }
+            Answers.insert {
+                it[answer]= "what what what"
+                it[question]= "then something"
+                it[points] = 400
+                it[categoryId] = 2
+                it[done] = false
+            }
+            Answers.insert {
+                it[answer]= "what what what"
+                it[question]= "then something"
+                it[points] = 500
+                it[categoryId] = 2
+                it[done] = false
+            }
         }
     }
 
