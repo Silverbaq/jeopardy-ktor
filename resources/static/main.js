@@ -66,6 +66,7 @@ function commandControl(input) {
 
     switch (cmd) {
         case "BOARD":
+            clearDisplay()
             displayTeams(data["teams"])
             generateGameTable(data["categories"])
     }
@@ -73,6 +74,12 @@ function commandControl(input) {
 
 function initLoop() {
     connect();
+}
+
+function clearDisplay(){
+    document.getElementById("teams").innerHTML = ""
+    document.getElementById("gameboard").innerHTML = ""
+    document.getElementById("answer").innerHTML = ""
 }
 
 function displayTeams(teams) {

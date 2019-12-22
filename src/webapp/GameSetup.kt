@@ -35,6 +35,7 @@ fun Route.gamesetup(teamDB: TeamRepository, categoryRepository: CategoryReposito
                 val teams = teamDB.getAll()
                 val categories = categoryRepository.getAll()
                 jeopardyServer.startRound(categories, teams)
+                call.redirect(GameControls())
             }
         }
     }

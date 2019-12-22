@@ -12,6 +12,13 @@ import java.util.concurrent.CopyOnWriteArrayList
 
 class JeopardyServer : Jeopardy {
     private val boardClients = ConcurrentHashMap<String, MutableList<WebSocketSession>>()
+
+    override suspend fun refresh() {
+        val cmd = Command("BOARD", gameBoard)
+        val json = Gson().toJson(cmd)
+        broadcastMessage(json)
+    }
+
     private val gameBoard = GameBoard(mutableListOf(), mutableListOf())
 
     suspend fun clientJoin(name: String, socket: WebSocketSession) {
