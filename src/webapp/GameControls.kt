@@ -37,14 +37,14 @@ fun Route.gamecontrols(
             "refresh" -> {
                 val teams = teamDB.getAll()
                 val categories = categoryRepository.getAll()
-                jeopardyServer.refresh()
+                jeopardyServer.refresh(teams, categories)
                 call.redirect(GameControls())
             }
             "answer" -> {
                 val id = params["id"] ?: throw IllegalArgumentException("Missing parameter: Id")
                 val answer = answerRepository.getById(id) ?: throw IllegalArgumentException("No answer found by id $id")
                 jeopardyServer.selectAnswer(answer)
-                call.redirect(GameControls())
+                call.redirect(GameAnswer(id.toInt()))
             }
         }
     }

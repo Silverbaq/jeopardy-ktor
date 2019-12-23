@@ -36,9 +36,8 @@ class CategoryRepository : Repository<Category> {
 
     }
 
-    override suspend fun update(item: Category): Category {
+    override suspend fun update(item: Category) {
         //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        return item
     }
 
     override suspend fun removeById(id: Int): Boolean {

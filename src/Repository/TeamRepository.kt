@@ -29,9 +29,8 @@ class TeamRepository : Repository<Team> {
         Teams.selectAll().map { toTeam(it) }
     }
 
-    override suspend fun update(team: Team): Team {
+    override suspend fun update(team: Team) {
         // TODO
-        return team
     }
 
     override suspend fun removeById(id: Int): Boolean {
@@ -47,6 +46,14 @@ class TeamRepository : Repository<Team> {
 
     override suspend fun clear() {
         Teams.deleteAll()
+    }
+
+    suspend fun updateTeamPoints(id: Int, points: Int){
+        transaction {
+            Teams.update({ Teams.id eq id }) {
+                it[Teams.points] = points
+            }
+        }
     }
 
     private fun toTeam(row: ResultRow): Team =

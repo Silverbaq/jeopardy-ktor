@@ -5,10 +5,9 @@ import dk.w4.model.Category
 import dk.w4.model.Team
 
 interface Jeopardy {
-    suspend fun giveTeamPoints(points: Int, team: Team)
-    suspend fun takeTeamPoints(points: Int, team: Team)
+    suspend fun updateTeamPoints(points: Int, team: Team, givePoints: Boolean)
     suspend fun startRound(categories: List<Category>, teams: List<Team>)
     suspend fun selectAnswer(answer: Answer)
     suspend fun hideAnswer(answer: Answer)
-    suspend fun refresh()
+    suspend fun refresh(teams: List<Team>, categories: List<Category>)
 }

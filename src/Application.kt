@@ -55,6 +55,7 @@ fun Application.module(testing: Boolean = false) {
         categories(categoryRepository)
         answer(answerRepository)
         gamecontrols(teamRepository, categoryRepository, answerRepository, jeopardyServer)
+        gameanswer(answerRepository, teamRepository, jeopardyServer)
 
         webSocket("/ws") {
             //send(Frame.Text("Hi from server"))

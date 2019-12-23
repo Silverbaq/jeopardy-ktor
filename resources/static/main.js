@@ -78,9 +78,12 @@ function commandControl(input) {
             generateAnswer(data["answer"])
             break
         case "GIVE_POINTS":
+            console.log(data)
             revealQuestion()
+            giveTeamPoints(data["teamName"], data["points"])
             break
         case "TAKE_POINTS":
+            takeTeamPoints(data["teamName"], data["points"])
             break
         default:
             console.log("Wrong command!")
@@ -89,6 +92,16 @@ function commandControl(input) {
 
 function initLoop() {
     connect();
+}
+
+function takeTeamPoints(name, points) {
+    document.getElementById(name+"-body").textContent = points
+    //document.getElementById(name+"-points")
+}
+
+function giveTeamPoints(name, points) {
+    document.getElementById(name+"-body").textContent = points
+    //document.getElementById(name+"-points")
 }
 
 function clearDisplay(){
@@ -115,10 +128,12 @@ function createTeamCard(name, points) {
     cardHead.textContent = name
 
     var cardBody = document.createElement("div")
+    cardBody.id = name+"-body"
     cardBody.className = "card-body text-center"
 
     var pointsElement = document.createElement("h5")
     pointsElement.className = "card-title"
+    pointsElement.id = name+"-points"
     pointsElement.textContent = points
 
     card.append(cardHead)
@@ -196,12 +211,12 @@ function generateAnswer(answer){
 
     var container2 = document.createElement("div")
     container2.className = "mx-auto"
+    container2.id = "question"
+    $(container2).hide()
     answerContainer.append(container2)
 
     var h1Question = document.createElement("h1")
     h1Question.textContent = answer["question"]
-    h1Question.id = "question"
-    $(h1Question).hide()
 
     var br = document.createElement("br")
     container2.append(br)
@@ -211,7 +226,8 @@ function generateAnswer(answer){
 }
 
 function revealQuestion() {
-    $("question").show()
+    console.log("trying to show")
+    $("#question").show()
 }
 
 function displayBoard() {

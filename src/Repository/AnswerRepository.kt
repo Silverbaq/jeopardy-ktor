@@ -31,8 +31,16 @@ class AnswerRepository : Repository<Answer> {
         Answers.selectAll().mapNotNull { toAnswer(it) }
     }
 
-    override suspend fun update(item: Answer): Answer {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override suspend fun update(item: Answer) {
+        transaction {
+            Answers.update({ Answers.id eq item.id }){
+                it[points] = item.points
+                it[categoryId] = item.categoryId
+                it[answer] = item.answer
+                it[question] = item.question
+                it[done] = item.done
+            }
+        }
     }
 
     override suspend fun removeById(id: Int): Boolean {
