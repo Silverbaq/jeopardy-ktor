@@ -2,40 +2,41 @@
 
 <@b.page>
     <script src=/static/main.js></script>
-    <div class="row">
-        <form method="post" action="/gamecontrols">
-            <input type="hidden" name="action" value="refresh">
-            <input type="submit" value="Refresh"/>
-        </form>
-    </div>
-
-    <div class="row">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-
-            </tr>
-            </thead>
-            <tbody>
-            <#list categories as category>
+    <div class="container">
+        <div class="row">
+            <form method="post" action="/gamecontrols">
+                <input type="hidden" name="action" value="refresh">
+                <input type="submit" value="Refresh"/>
+            </form>
+        </div>
+        <br>
+        <div class="row">
+            <table class="table table-striped">
+                <thead>
                 <tr>
-                    <td style="vertical-align:middle"><h3>${category.name}</h3></td>
-                    <#list category.answers as answer>
-                        <#if !answer.done>
-                            <td class="col-md-1" style="text-align:center;vertical-align:middle;">
-                                <form method="post" action="/gamecontrols">
-                                    <input type="hidden" name="id" value="${answer.id}">
-                                    <input type="hidden" name="action" value="answer">
-                                    <input type="submit" value="${answer.points}">
-                                </form>
-                            </td>
-                        </#if>
-                    </#list>
+
                 </tr>
-            </#list>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                <#list categories as category>
+                    <tr>
+                        <td style="vertical-align:middle"><h3>${category.name}</h3></td>
+                        <#list category.answers as answer>
+                            <#if !answer.done>
+                                <td class="col-md-1" style="text-align:center;vertical-align:middle;">
+                                    <form method="post" action="/gamecontrols">
+                                        <input type="hidden" name="id" value="${answer.id}">
+                                        <input type="hidden" name="action" value="answer">
+                                        <input type="submit" value="${answer.points}">
+                                    </form>
+                                </td>
+                            </#if>
+                        </#list>
+                    </tr>
+                </#list>
+                </tbody>
+            </table>
 
+        </div>
     </div>
-
 </@b.page>

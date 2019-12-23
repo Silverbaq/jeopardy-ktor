@@ -14,15 +14,6 @@
         <li><a href="/">Board</a></li>
         <li><a href="/rungame">Run Game!</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-      <#if user??>
-        <li><p class="navbar-text">Welcome ${user.displayName}</p></li>
-        <li><a href="/signout">Sign Out</a></li>
-      <#else>
-        <li><a href="/signin">Sign In</a></li>
-        <li><a href="/signup">Sign Up</a></li>
-       </#if>
-      </ul>
     </div>
   </div>
 </nav>

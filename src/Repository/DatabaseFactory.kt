@@ -97,7 +97,7 @@ object DatabaseFactory {
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "what what what"
+                it[answer]= "https://heartbeats.dk/wp-content/uploads/2019/10/funny-game-of-thrones-memes.jpg"
                 it[question]= "then something"
                 it[points] = 500
                 it[categoryId] = 2

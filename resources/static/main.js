@@ -193,36 +193,44 @@ function generateGameTable(categories) {
         tr5.append(td5)
     })
 
-
     $("#gameboard").append(table)
 }
 
 function generateAnswer(answer){
     console.log("generateAnswer" + answer)
     var answerContainer = document.getElementById("answer")
+    answerContainer.className = "container"
     var container = document.createElement("div")
-    container.className = "mx-auto"
+    container.className = "row text-center"
     answerContainer.append(container)
 
-    var h1Answer = document.createElement("h1")
-    h1Answer.textContent = answer["answer"]
+    if (isUrl(answer["answer"])){
+        var h1Answer = document.createElement("img")
+        h1Answer.src = answer["answer"]
+    } else{
+        var h1Answer = document.createElement("h1")
+        h1Answer.textContent = answer["answer"]
+    }
+
     container.append(h1Answer)
 
 
     var container2 = document.createElement("div")
-    container2.className = "mx-auto"
+    container2.className = "row text-center"
     container2.id = "question"
     $(container2).hide()
     answerContainer.append(container2)
 
-    var h1Question = document.createElement("h1")
-    h1Question.textContent = answer["question"]
 
-    var br = document.createElement("br")
-    container2.append(br)
-    container2.append(br)
-    container2.append(h1Question)
+    var theQuestion = document.createElement("h1")
+    theQuestion.textContent = answer["question"]
 
+    container2.append(theQuestion)
+}
+
+function isUrl(s) {
+    var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
+    return regexp.test(s);
 }
 
 function revealQuestion() {
@@ -233,7 +241,6 @@ function revealQuestion() {
 function displayBoard() {
     $('#answer').hide()
     $('#gameboard').show()
-
 }
 
 function displayAnswer() {
