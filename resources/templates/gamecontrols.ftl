@@ -12,8 +12,14 @@
             </div>
             <div class="col-3">
                 <form method="post" action="/gamecontrols">
-                    <input type="hidden" name="action" value="random">
-                    <input type="submit" value="Random!"/>
+                    <input type="hidden" name="action" value="random-image">
+                    <input type="submit" value="Random image!"/>
+                </form>
+            </div>
+            <div class="col-3">
+                <form method="post" action="/gamecontrols">
+                    <input type="hidden" name="action" value="random-video">
+                    <input type="submit" value="Random video!"/>
                 </form>
             </div>
         </div>

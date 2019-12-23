@@ -27,6 +27,12 @@ class JeopardyServer : Jeopardy {
         broadcastMessage(json)
     }
 
+    override suspend fun randomVideo() {
+        val cmd = Command(VIDEO, EmptyData())
+        val json = Gson().toJson(cmd)
+        broadcastMessage(json)
+    }
+
     suspend fun clientJoin(name: String, socket: WebSocketSession) {
         val list = boardClients.computeIfAbsent(name) { CopyOnWriteArrayList<WebSocketSession>() }
         list.add(socket)
@@ -94,5 +100,6 @@ class JeopardyServer : Jeopardy {
         private const val TAKE_POINTS = "TAKE_POINTS"
         private const val GIVE_POINTS = "GIVE_POINTS"
         private const val IMAGE = "IMAGE"
+        private const val VIDEO = "VIDEO"
     }
 }

@@ -88,6 +88,9 @@ function commandControl(input) {
         case "IMAGE":
             showRandomImage();
             break;
+        case "VIDEO":
+            showRandomVideo();
+            break;
         default:
             console.log("Wrong command!")
     }
@@ -124,10 +127,45 @@ function showRandomImage() {
     }, 3000);
 }
 
+function showRandomVideo() {
+    $("#mainGame").hide();
+    $("#takeover").show();
+
+    $("#takeover").empty();
+
+    var randomVideo = getRansomVideo();
+    console.log(randomVideo)
+
+    var video = "<video width=\"800\" autoplay>\n" +
+        "  <source src=\"" +
+        randomVideo[0] +
+        "\" type=\"video/mp4\">\n" +
+        "  Your browser does not support HTML5 video.\n" +
+        "</video>";
+
+
+    $("#takeover").append(video);
+
+    setTimeout(function () {
+        $("#takeover").hide();
+        $("#mainGame").show()
+    }, randomVideo[1] * 1000);
+}
+
+function getRansomVideo() {
+    var myArray = [
+        ["https://img-9gag-fun.9cache.com/photo/a9R51qZ_460sv.mp4", 11],
+        ["https://img-9gag-fun.9cache.com/photo/avo6AjO_460svav1.mp4", 17],
+        ["https://img-9gag-fun.9cache.com/photo/an52gEV_460svav1.mp4", 11]
+    ]
+    return myArray[Math.floor(Math.random() * myArray.length)];
+}
+
 function getRandomImage() {
     var myArray = [
         "https://i.kym-cdn.com/entries/icons/original/000/005/220/wizard.jpg",
-        "https://i.kym-cdn.com/photos/images/newsfeed/000/117/814/are-you-wizard.jpg"
+        "https://i.kym-cdn.com/photos/images/newsfeed/000/117/814/are-you-wizard.jpg",
+        "https://img-9gag-fun.9cache.com/photo/aL04peP_460svav1.mp4"
     ];
     return myArray[Math.floor(Math.random() * myArray.length)];
 }
