@@ -2,5 +2,5 @@
   <br>
   <br>
   <br>
-  <p>Copyright 2019 EmojiPhrases LLC</p>
+  <p>Non-Copyright 2019 Jeopardy-Ktor</p>
 </footer>

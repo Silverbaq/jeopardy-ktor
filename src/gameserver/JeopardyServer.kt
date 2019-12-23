@@ -14,7 +14,7 @@ class JeopardyServer : Jeopardy {
     private val boardClients = ConcurrentHashMap<String, MutableList<WebSocketSession>>()
 
     override suspend fun refresh() {
-        val cmd = Command("BOARD", gameBoard)
+        val cmd = Command(BOARD, gameBoard)
         val json = Gson().toJson(cmd)
         broadcastMessage(json)
     }
@@ -33,7 +33,7 @@ class JeopardyServer : Jeopardy {
             it.forEach { socket ->
                 try {
                     socket.send(Frame.Text(message))
-                } catch (ex: ClosedSendChannelException){
+                } catch (ex: ClosedSendChannelException) {
                     it.remove(socket)
                 }
             }
@@ -60,7 +60,10 @@ class JeopardyServer : Jeopardy {
     }
 
     override suspend fun selectAnswer(answer: Answer) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val answerData = AnswerData(mutableListOf(), answer)
+        val cmd = Command(ANSWER, answerData)
+        val json = Gson().toJson(cmd)
+        broadcastMessage(json)
     }
 
     override suspend fun hideAnswer(answer: Answer) {
@@ -70,4 +73,10 @@ class JeopardyServer : Jeopardy {
     interface ClientData
     data class Command(val cmd: String, val data: ClientData)
     data class GameBoard(val teams: MutableList<Team>, val categories: MutableList<Category>) : ClientData
+    data class AnswerData(val teams: MutableList<Team>, val answer: Answer) : ClientData
+
+    companion object {
+        private const val BOARD = "BOARD"
+        private const val ANSWER = "ANSWER"
+    }
 }

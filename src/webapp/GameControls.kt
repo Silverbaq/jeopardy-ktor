@@ -1,8 +1,10 @@
 package dk.w4.webapp
 
+import dk.w4.Repository.AnswerRepository
 import dk.w4.Repository.CategoryRepository
 import dk.w4.Repository.TeamRepository
 import dk.w4.gameserver.Jeopardy
+import dk.w4.model.Answer
 import dk.w4.redirect
 import io.ktor.application.call
 import io.ktor.freemarker.FreeMarkerContent
@@ -18,9 +20,15 @@ const val GAMECONTROLS = "/gamecontrols"
 @Location(GAMECONTROLS)
 class GameControls
 
-fun Route.gamecontrols(teamDB: TeamRepository, categoryRepository: CategoryRepository, jeopardyServer: Jeopardy) {
+fun Route.gamecontrols(
+    teamDB: TeamRepository,
+    categoryRepository: CategoryRepository,
+    answerRepository: AnswerRepository,
+    jeopardyServer: Jeopardy
+) {
     get<GameControls> {
-        call.respond(FreeMarkerContent("gamecontrols.ftl", null))
+        val categories = categoryRepository.getAll()
+        call.respond(FreeMarkerContent("gamecontrols.ftl", mapOf("categories" to categories)))
     }
     post<GameControls> {
         val params = call.receiveParameters()
@@ -30,6 +38,12 @@ fun Route.gamecontrols(teamDB: TeamRepository, categoryRepository: CategoryRepos
                 val teams = teamDB.getAll()
                 val categories = categoryRepository.getAll()
                 jeopardyServer.refresh()
+                call.redirect(GameControls())
+            }
+            "answer" -> {
+                val id = params["id"] ?: throw IllegalArgumentException("Missing parameter: Id")
+                val answer = answerRepository.getById(id) ?: throw IllegalArgumentException("No answer found by id $id")
+                jeopardyServer.selectAnswer(answer)
                 call.redirect(GameControls())
             }
         }

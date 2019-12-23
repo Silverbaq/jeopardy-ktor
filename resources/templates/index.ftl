@@ -5,6 +5,6 @@
     </script>
     <div class="row" id="teams"></div>
     <div class="row" id="gameboard"></div>
-    <div class="row" id="answer"></div>
+    <div class="row " id="answer"></div>
 
 </@b.page>

@@ -67,8 +67,23 @@ function commandControl(input) {
     switch (cmd) {
         case "BOARD":
             clearDisplay()
+            displayBoard()
             displayTeams(data["teams"])
             generateGameTable(data["categories"])
+            break
+        case "ANSWER":
+            //clearDisplay()
+            displayAnswer()
+            //displayTeams(data["teams"])
+            generateAnswer(data["answer"])
+            break
+        case "GIVE_POINTS":
+            revealQuestion()
+            break
+        case "TAKE_POINTS":
+            break
+        default:
+            console.log("Wrong command!")
     }
 }
 
@@ -85,11 +100,13 @@ function clearDisplay(){
 function displayTeams(teams) {
     teams.forEach(function (team, index, array) {
         createTeamCard(team.name, team.points);
-        console.log(team)
     });
 }
 
 function createTeamCard(name, points) {
+    var container = document.createElement("div")
+    container.className = "mx-auto"
+
     var card = document.createElement("div");
     card.className = "card";
 
@@ -108,10 +125,12 @@ function createTeamCard(name, points) {
     card.append(cardBody)
     cardBody.append(points)
 
-    $("#teams").append(card)
+    container.append(card)
+    $("#teams").append(container)
 }
 
 function generateGameTable(categories) {
+    console.log(categories)
     var table = document.createElement("table")
     table.className = "table table-bordered text-center"
 
@@ -163,6 +182,48 @@ function generateGameTable(categories) {
     $("#gameboard").append(table)
 }
 
+function generateAnswer(answer){
+    console.log("generateAnswer" + answer)
+    var answerContainer = document.getElementById("answer")
+    var container = document.createElement("div")
+    container.className = "mx-auto"
+    answerContainer.append(container)
+
+    var h1Answer = document.createElement("h1")
+    h1Answer.textContent = answer["answer"]
+    container.append(h1Answer)
+
+
+    var container2 = document.createElement("div")
+    container2.className = "mx-auto"
+    answerContainer.append(container2)
+
+    var h1Question = document.createElement("h1")
+    h1Question.textContent = answer["question"]
+    h1Question.id = "question"
+    $(h1Question).hide()
+
+    var br = document.createElement("br")
+    container2.append(br)
+    container2.append(br)
+    container2.append(h1Question)
+
+}
+
+function revealQuestion() {
+    $("question").show()
+}
+
+function displayBoard() {
+    $('#answer').hide()
+    $('#gameboard').show()
+
+}
+
+function displayAnswer() {
+    $('#answer').show()
+    $('#gameboard').hide()
+}
 
 // This is the entry point of the client.
 initLoop();
