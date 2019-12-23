@@ -21,6 +21,12 @@ class JeopardyServer : Jeopardy {
         startRound(categories, teams)
     }
 
+    override suspend fun randomImage() {
+        val cmd = Command(IMAGE, EmptyData())
+        val json = Gson().toJson(cmd)
+        broadcastMessage(json)
+    }
+
     suspend fun clientJoin(name: String, socket: WebSocketSession) {
         val list = boardClients.computeIfAbsent(name) { CopyOnWriteArrayList<WebSocketSession>() }
         list.add(socket)
@@ -80,11 +86,13 @@ class JeopardyServer : Jeopardy {
     data class GameBoard(val teams: MutableList<Team>, val categories: MutableList<Category>) : ClientData
     data class AnswerData(val teams: MutableList<Team>, val answer: Answer) : ClientData
     data class TeamPointsData(val teamName: String, val points: Int): ClientData
+    class EmptyData: ClientData
 
     companion object {
         private const val BOARD = "BOARD"
         private const val ANSWER = "ANSWER"
         private const val TAKE_POINTS = "TAKE_POINTS"
         private const val GIVE_POINTS = "GIVE_POINTS"
+        private const val IMAGE = "IMAGE"
     }
 }

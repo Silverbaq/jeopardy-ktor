@@ -10,4 +10,5 @@ interface Jeopardy {
     suspend fun selectAnswer(answer: Answer)
     suspend fun hideAnswer(answer: Answer)
     suspend fun refresh(teams: List<Team>, categories: List<Category>)
+    suspend fun randomImage()
 }

@@ -46,6 +46,10 @@ fun Route.gamecontrols(
                 jeopardyServer.selectAnswer(answer)
                 call.redirect(GameAnswer(id.toInt()))
             }
+            "random" -> {
+                jeopardyServer.randomImage()
+                call.redirect(GameControls())
+            }
         }
     }
 }

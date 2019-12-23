@@ -85,6 +85,9 @@ function commandControl(input) {
         case "TAKE_POINTS":
             takeTeamPoints(data["teamName"], data["points"])
             break
+        case "IMAGE":
+            showRandomImage();
+            break;
         default:
             console.log("Wrong command!")
     }
@@ -95,16 +98,41 @@ function initLoop() {
 }
 
 function takeTeamPoints(name, points) {
-    document.getElementById(name+"-body").textContent = points
+    document.getElementById(name + "-body").textContent = points
     //document.getElementById(name+"-points")
 }
 
 function giveTeamPoints(name, points) {
-    document.getElementById(name+"-body").textContent = points
+    document.getElementById(name + "-body").textContent = points
     //document.getElementById(name+"-points")
 }
 
-function clearDisplay(){
+function showRandomImage() {
+    $("#mainGame").hide();
+    $("#takeover").show();
+
+    $("#takeover").empty();
+
+
+    var image = document.createElement("img");
+    image.src = getRandomImage();
+    $("#takeover").append(image);
+
+    setTimeout(function () {
+        $("#takeover").hide();
+        $("#mainGame").show()
+    }, 3000);
+}
+
+function getRandomImage() {
+    var myArray = [
+        "https://i.kym-cdn.com/entries/icons/original/000/005/220/wizard.jpg",
+        "https://i.kym-cdn.com/photos/images/newsfeed/000/117/814/are-you-wizard.jpg"
+    ];
+    return myArray[Math.floor(Math.random() * myArray.length)];
+}
+
+function clearDisplay() {
     document.getElementById("teams").innerHTML = ""
     document.getElementById("gameboard").innerHTML = ""
     document.getElementById("answer").innerHTML = ""
@@ -128,12 +156,12 @@ function createTeamCard(name, points) {
     cardHead.textContent = name
 
     var cardBody = document.createElement("div")
-    cardBody.id = name+"-body"
+    cardBody.id = name + "-body"
     cardBody.className = "card-body text-center"
 
     var pointsElement = document.createElement("h5")
     pointsElement.className = "card-title"
-    pointsElement.id = name+"-points"
+    pointsElement.id = name + "-points"
     pointsElement.textContent = points
 
     card.append(cardHead)
@@ -196,7 +224,7 @@ function generateGameTable(categories) {
     $("#gameboard").append(table)
 }
 
-function generateAnswer(answer){
+function generateAnswer(answer) {
     console.log("generateAnswer" + answer)
     var answerContainer = document.getElementById("answer")
     answerContainer.className = "container"
@@ -204,10 +232,10 @@ function generateAnswer(answer){
     container.className = "row text-center"
     answerContainer.append(container)
 
-    if (isUrl(answer["answer"])){
+    if (isUrl(answer["answer"])) {
         var h1Answer = document.createElement("img")
         h1Answer.src = answer["answer"]
-    } else{
+    } else {
         var h1Answer = document.createElement("h1")
         h1Answer.textContent = answer["answer"]
     }
