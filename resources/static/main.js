@@ -114,12 +114,12 @@ function showRandomImage() {
     $("#mainGame").hide();
     $("#takeover").show();
 
-    $("#takeover").empty();
+    $("#takeover-row").empty();
 
 
     var image = document.createElement("img");
     image.src = getRandomImage();
-    $("#takeover").append(image);
+    $("#takeover-row").append(image);
 
     setTimeout(function () {
         $("#takeover").hide();
@@ -131,7 +131,7 @@ function showRandomVideo() {
     $("#mainGame").hide();
     $("#takeover").show();
 
-    $("#takeover").empty();
+    $("#takeover-row").empty();
 
     var randomVideo = getRansomVideo();
     console.log(randomVideo)
@@ -144,7 +144,7 @@ function showRandomVideo() {
         "</video>";
 
 
-    $("#takeover").append(video);
+    $("#takeover-row").append(video);
 
     setTimeout(function () {
         $("#takeover").hide();
@@ -238,7 +238,7 @@ function generateGameTable(categories) {
     categories.forEach(function (value) {
         var th = document.createElement("th")
         th.textContent = value["name"]
-        tableHead.append(th)
+        headerRow.append(th)
 
         var td1 = document.createElement("td")
         var td2 = document.createElement("td")
@@ -267,7 +267,7 @@ function generateAnswer(answer) {
     var answerContainer = document.getElementById("answer")
     answerContainer.className = "container"
     var container = document.createElement("div")
-    container.className = "row text-center"
+    container.className = "row justify-content-center"
     answerContainer.append(container)
 
     if (isUrl(answer["answer"])) {
@@ -282,7 +282,7 @@ function generateAnswer(answer) {
 
 
     var container2 = document.createElement("div")
-    container2.className = "row text-center"
+    container2.className = "row justify-content-center"
     container2.id = "question"
     $(container2).hide()
     answerContainer.append(container2)

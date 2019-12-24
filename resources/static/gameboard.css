@@ -1,0 +1,30 @@
+body {
+    background-color : #000000;
+}
+
+table.table-bordered{
+    border:1px solid black;
+    margin-top:20px;
+}
+table.table-bordered > thead > tr > th{
+    border:2px solid black;
+    background: dodgerblue;
+}
+table.table-bordered > tbody > tr > td{
+    border:2px solid black;
+    background: dodgerblue;
+}
+
+#mainGame {
+    position: relative;
+}
+#mainGame canvas, #myCanvas {
+    position: absolute;
+}
+canvas {
+    z-index:-1;
+}
+
+h1 {
+    color: white;
+}
