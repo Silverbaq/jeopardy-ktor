@@ -124,7 +124,7 @@ function showRandomImage() {
     setTimeout(function () {
         $("#takeover").hide();
         $("#mainGame").show()
-    }, 3000);
+    }, 5000);
 }
 
 function showRandomVideo() {
@@ -156,6 +156,18 @@ function getRansomVideo() {
     var myArray = [
         ["https://img-9gag-fun.9cache.com/photo/a9R51qZ_460sv.mp4", 11],
         ["https://img-9gag-fun.9cache.com/photo/avo6AjO_460svav1.mp4", 17],
+        ["https://img-9gag-fun.9cache.com/photo/aL04peP_460svav1.mp4", 12],
+        ["https://img-9gag-fun.9cache.com/photo/aQ17grd_460svvp9.webm", 7],
+        ["https://img-9gag-fun.9cache.com/photo/a0R0eqL_460sv.mp4", 3],
+        ["https://img-9gag-fun.9cache.com/photo/az1KxdZ_460sv.mp4", 6],
+        ["https://img-9gag-fun.9cache.com/photo/ag57oQw_460svav1.mp4", 11],
+        ["https://img-9gag-fun.9cache.com/photo/ax76bg2_460sv.mp4", 16],
+        ["https://img-9gag-fun.9cache.com/photo/aWEnXmK_460svav1.mp4", 6],
+        ["https://img-9gag-fun.9cache.com/photo/aZ785o0_460svav1.mp4", 6],
+        ["https://img-9gag-fun.9cache.com/photo/aWEnyWA_460sv.mp4", 7],
+        ["https://img-9gag-fun.9cache.com/photo/a0R0qXL_460sv.mp4", 16],
+        ["https://img-9gag-fun.9cache.com/photo/ao5R79x_460svav1.mp4", 10],
+        ["https://img-9gag-fun.9cache.com/photo/ag578dw_460sv.mp4", 9],
         ["https://img-9gag-fun.9cache.com/photo/an52gEV_460svav1.mp4", 11]
     ]
     return myArray[Math.floor(Math.random() * myArray.length)];
@@ -164,8 +176,26 @@ function getRansomVideo() {
 function getRandomImage() {
     var myArray = [
         "https://i.kym-cdn.com/entries/icons/original/000/005/220/wizard.jpg",
-        "https://i.kym-cdn.com/photos/images/newsfeed/000/117/814/are-you-wizard.jpg",
-        "https://img-9gag-fun.9cache.com/photo/aL04peP_460svav1.mp4"
+        "https://img-9gag-fun.9cache.com/photo/aN0Q9Yb_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/abr4eB9_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/az1K2pm_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/ax76oVn_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/a6N5nYe_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/aj5LBYQ_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/aEgAAOe_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/az1KyoB_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/avo6qzM_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/a9R5wAK_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/aXjV8wV_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/aBgVDgz_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/am56wBy_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/ax76KEb_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/aXjV3qV_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/an52oXV_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/aMYPLe6_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/ae5ZB5b_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/a4RNyMw_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/aQ17zbr_460swp.webp"
     ];
     return myArray[Math.floor(Math.random() * myArray.length)];
 }
