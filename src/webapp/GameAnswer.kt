@@ -54,6 +54,11 @@ fun Route.gameanswer(answerRepository: AnswerRepository, teamRepository: TeamRep
                 jeopardyServer.updateTeamPoints(points, updatedTeam, false)
                 call.redirect(GameAnswer(answerId.toInt()))
             }
+            "showanswer" -> {
+                jeopardyServer.showAnswer()
+                answerRepository.update(Answer(answer.id, answer.question, answer.answer, answer.points, answer.categoryId, true))
+                call.redirect(GameControls())
+            }
         }
     }
 

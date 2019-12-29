@@ -15,6 +15,11 @@ table.table-bordered > tbody > tr > td{
     background: dodgerblue;
 }
 
+table {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
 #mainGame {
     position: relative;
 }

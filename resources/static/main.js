@@ -91,6 +91,9 @@ function commandControl(input) {
         case "VIDEO":
             showRandomVideo();
             break;
+        case "SHOW_ANSWER":
+            revealQuestion();
+            break;
         default:
             console.log("Wrong command!")
     }

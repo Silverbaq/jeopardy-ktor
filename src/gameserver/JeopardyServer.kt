@@ -65,6 +65,12 @@ class JeopardyServer : Jeopardy {
         }
     }
 
+    suspend fun showAnswer(){
+        val cmd = Command(SHOW_ANSWER, EmptyData())
+        val json = Gson().toJson(cmd)
+        broadcastMessage(json)
+    }
+
     override suspend fun startRound(categories: List<Category>, teams: List<Team>) {
         gameBoard.teams.clear()
         gameBoard.teams.addAll(teams)
@@ -101,5 +107,6 @@ class JeopardyServer : Jeopardy {
         private const val GIVE_POINTS = "GIVE_POINTS"
         private const val IMAGE = "IMAGE"
         private const val VIDEO = "VIDEO"
+        private const val SHOW_ANSWER = "SHOW_ANSWER"
     }
 }
