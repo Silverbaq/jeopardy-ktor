@@ -19,6 +19,7 @@ object DatabaseFactory {
             SchemaUtils.create(Categories)
             SchemaUtils.create(Answers)
 
+            /*
             Teams.insert {
                 it[name] = "team1"
                 it[points] = 0
@@ -27,6 +28,8 @@ object DatabaseFactory {
                 it[name] = "team2"
                 it[points] = 0
             }
+
+             */
             Categories.insert{
                 it[name]  ="Året der gik"
             }
