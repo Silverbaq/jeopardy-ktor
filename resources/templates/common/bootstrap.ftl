@@ -18,5 +18,6 @@
     </div>
 
     </body>
+    <script src="/static/bootstrap-ext.js"></script>
     </html>
 </#macro>
