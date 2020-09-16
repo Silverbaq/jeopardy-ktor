@@ -31,203 +31,243 @@ object DatabaseFactory {
 
              */
             Categories.insert{
-                it[name]  ="Året der gik"
+                it[name]  ="My Favorites"
             }
             Categories.insert{
-                it[name]  ="The future"
+                it[name]  ="Born’n’rasied"
             }
             Categories.insert{
-                it[name]  ="Misc"
+                it[name]  ="GameBoy Accessories"
             }
             Categories.insert{
-                it[name]  ="Hold my beer, I got this!?!"
+                it[name]  ="IT you say... Easy!"
             }
             Categories.insert{
-                it[name]  ="It's over 9k"
+                it[name]  ="Fun facts"
+            }
+            Categories.insert {
+                it[name] = "Computer ports as binaries"
             }
 
-            // Året der gik
+            // My Favorites
             Answers.insert {
-                it[answer]= "https://www.thoughtco.com/thmb/pG4De9t7aRBTSx-aGdaiEDO-F4E=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-573083127-593894665f4a4ae7b923d6b9b2058edb.jpg"
-                it[question]= "Hvem er/skal gift(es)"
+                it[answer]= "https://i.ibb.co/MCmZThf/lasagne.jpg"
+                it[question]= "What is lasagne"
                 it[points] = 100
                 it[categoryId] = 1
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://i.redd.it/1w7d067081w21.png"
-                it[question]= "Hvad er \"Sonic the hedgehog (2019)\""
+                it[answer]= "https://i.ibb.co/Yt0Tx4Z/siliconvalley.jpg"
+                it[question]= "What is Silicon Valley"
                 it[points] = 200
                 it[categoryId] = 1
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://lumiere-a.akamaihd.net/v1/images/star-wars-the-rise-of-skywalker-theatrical-poster-1000_ebc74357.jpeg"
-                it[question]= "Hvad er den sidste film i Star Wars historien (The rise of Skywalker)"
+                it[answer]= "https://i.ibb.co/DVpT4gk/kotlin.png"
+                it[question]= "What is Kotlin"
                 it[points] = 300
                 it[categoryId] = 1
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://cdn.cnn.com/cnnnext/dam/assets/191121212606-tesla-cybertruck-exlarge-169.jpg"
-                it[question]= "Hvad er \"Tesla Truck\""
+                it[answer]= "https://i.ibb.co/JQ4VG5X/sevablodda.jpg"
+                it[question]= "What is Sevablødda"
                 it[points] = 400
                 it[categoryId] = 1
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://bt.bmcdn.dk/media/cache/resolve/image_1240/image/124/1240630/22559564-four-hills-ski-jumping-tournam.jpeg"
-                it[question]= "Hvad er \"1. Januar 2019\""
+                it[answer]= "https://i.ibb.co/3FH5rL5/darknet.jpg"
+                it[question]= "What is Darknet diaries"
                 it[points] = 500
                 it[categoryId] = 1
                 it[done] = false
             }
 
-            //The future
+            // Born’n’rasied
             Answers.insert {
-                it[answer]= "https://ekstrabladet.dk/migration_catalog/article3918567.ece/IMAGE_ALTERNATES/relationBig/delorean"
-                it[question]= "Hvad er \"Tilbage til fremtiden (Back to the future)\""
+                it[answer]= "Name of the local railroad from my childhood. Which also has a “famous” danish song."
+                it[question]= "What is VLTJ"
                 it[points] = 100
                 it[categoryId] = 2
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://dygtyjqp7pi0m.cloudfront.net/i/35892/30933362_2.jpg?v=8D608586A9E3000"
-                it[question]= "Hvad er \"Time machine\""
+                it[answer]= "The city where I was raised "
+                it[question]= "What is Vrist"
                 it[points] = 200
                 it[categoryId] = 2
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://i.ebayimg.com/images/g/lHMAAOxydlFSxp~h/s-l300.jpg"
-                it[question]= "Hvad er \"Dr. Who\""
+                it[answer]= "The city where I went to primary school"
+                it[question]= "What is Harboøre"
                 it[points] = 300
                 it[categoryId] = 2
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://i1.wp.com/snesaday.com/wp-content/uploads/Teenage-Mutant-Ninja-Turtles-IV-Turtles-in-Time-FI-e1455392989805.png?resize=1024%2C576&ssl=1"
-                it[question]= "Hvad er \"Turtles in time\""
+                it[answer]= "The hospital where I was born"
+                it[question]= "What is Holstebro"
                 it[points] = 400
                 it[categoryId] = 2
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "Stiv pik og vind i håret"
-                it[question]= "Hvad er 2020"
+                it[answer]= "The city I started playing basketball in"
+                it[question]= "What is Lemvig"
                 it[points] = 500
                 it[categoryId] = 2
                 it[done] = false
             }
 
-            // Misc
+            // GameBoy Accessories
             Answers.insert {
-                it[answer]= "42"
-                it[question]= "Hvad er svaret på livet, universet og det hele."
+                it[answer]= "https://i.ibb.co/87FqZLr/symaskine.jpg"
+                it[question]= "What is the Game Boy sewing machine"
                 it[points] = 100
                 it[categoryId] = 3
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "1.5V"
-                it[question]= "Hvad er spændingen for et AA batteri"
+                it[answer]= "https://i.ibb.co/1mFvLTk/Fishing-Accessory.jpg"
+                it[question]= "What is the Game Boy Sonar"
                 it[points] = 200
                 it[categoryId] = 3
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "nnamhoL"
-                it[question]= "Hvad er \"Lohmann\" stavet spejlvendt"
+                it[answer]= "https://i.ibb.co/FV5JDfM/Game-Boy-Printer.jpg"
+                it[question]= "What is the Game Boy Printer"
                 it[points] = 300
                 it[categoryId] = 3
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://i.imgur.com/FR2nN.jpg"
-                it[question]= "Hvad er GameBoy symaskinen"
+                it[answer]= "https://i.ibb.co/4FTQ529/Game-Boy-Camera.jpg"
+                it[question]= "What is the Game Boy Camera"
                 it[points] = 400
                 it[categoryId] = 3
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "18-09-1983"
-                it[question]= "Hvad er Steffens fødselsdag"
+                it[answer]= "https://i.ibb.co/SRGbdTQ/Pedi-Sedate.jpg"
+                it[question]= "What is the Pedi Sedater"
                 it[points] = 500
                 it[categoryId] = 3
                 it[done] = false
             }
 
-            // Hold my beer, I got this!?!
+            // IT you say... Easy!
             Answers.insert {
-                it[answer]= "https://www.sentinelone.com/wp-content/uploads/2019/05/10-Sean-Dillons-Ruby-script.jpg"
-                it[question]= "Hvad er \"Eternal blue\""
+                it[answer]= "https://i.ibb.co/3TnHh36/mastersystem.jpg"
+                it[question]= "What is the Sega Master System"
                 it[points] = 100
                 it[categoryId] = 4
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://helloacm.com/wp-images/acm/2012/bf2.jpg"
-                it[question]= "Hvad er \"Brain fuck\""
+                it[answer]= "https://i.ibb.co/zSZhKSK/486.jpg"
+                it[question]= "What is the 80486 (66 Mhz, 4 MB RAM"
                 it[points] = 200
                 it[categoryId] = 4
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://lineastone.co.nz/wp-content/uploads/fly-images/350/1141-Pure-White-400x300-cc.jpg"
-                it[question]= "Hvad er \"White-space\""
+                it[answer]= "https://i.ibb.co/p2fq0Jd/1024px-Amstrad-CPC464.jpg"
+                it[question]= "What is the Amstrad CPC 464"
                 it[points] = 300
                 it[categoryId] = 4
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQsoF8udf_4-bXaDfXUmiyV77u6iY3yX1AIe3xEKGCh-BH4_Xct"
-                it[question]= "Hvad er \"JSFuck\""
+                it[answer]= "https://i.ibb.co/bBrtHZz/hero.jpg"
+                it[question]= "What is HTC Hero"
                 it[points] = 400
                 it[categoryId] = 4
                 it[done] = false
             }
             Answers.insert {
                 it[answer]= "Array(16).join('wat' - 1) + ' Batman!'"
-                it[question]= "Hvad er \"NaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaN Batman!\""
+                it[question]= "What is \"NaNNaNNaNNaNNaNNaNNaNNaNNaN\nNaNNaNNaNNaNNaNNaN Batman!\""
                 it[points] = 500
                 it[categoryId] = 4
                 it[done] = false
             }
 
-            // It's over 9k
+            // Fun Facts
             Answers.insert {
-                it[answer]= "http://team-sort.dk/student/Michael_Sort_student23.jpg"
-                it[question]= "Hvem er \"Michael Sort\""
+                it[answer]= "The day I was born"
+                it[question]= "What is the 18th of Septemper, 1983"
                 it[points] = 100
                 it[categoryId] = 5
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "http://team-sort.dk/student/Michael_Sort_student03.jpg"
-                it[question]= "Hvem er \"Michael Sort\""
+                it[answer]= "The amount of years lived in Odense"
+                it[question]= "What is 12 years"
                 it[points] = 200
                 it[categoryId] = 5
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "http://team-sort.dk/student/Michael_Sort_student20.jpg"
-                it[question]= "Hvem er \"Michael Sort\""
+                it[answer]= "My profession, before I moved to Odense"
+                it[question]= "What is a Minkfarmer"
                 it[points] = 300
                 it[categoryId] = 5
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "http://team-sort.dk/student/Michael_Sort_student19.jpg"
-                it[question]= "Hvem er \"Michael Sort\""
+                it[answer]= "https://i.ibb.co/xCWDCL4/93points.jpg"
+                it[question]= "What is 93 points"
                 it[points] = 400
                 it[categoryId] = 5
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://images.bonnier.cloud/files/ill/production/2018/10/13214753/michael-jackson-til-body.jpg"
-                it[question]= "Hvem er \"Michael Sort\""
+                it[answer]= "The only exam Ive have ever cheated in"
+                it[question]= "What is Advanced Operating system"
                 it[points] = 500
                 it[categoryId] = 5
+                it[done] = false
+            }
+
+            // Computer ports as binaries
+            Answers.insert {
+                it[answer]= "The port number for FTP (21)"
+                it[question]= "What is 10101"
+                it[points] = 100
+                it[categoryId] = 6
+                it[done] = false
+            }
+            Answers.insert {
+                it[answer]= "The port number for SSH (22)"
+                it[question]= "What is 10110"
+                it[points] = 200
+                it[categoryId] = 6
+                it[done] = false
+            }
+            Answers.insert {
+                it[answer]= "The port number for HTTP (80)"
+                it[question]= "What is 1010000"
+                it[points] = 300
+                it[categoryId] = 6
+                it[done] = false
+            }
+            Answers.insert {
+                it[answer]= "The port number for HTTPS (443)"
+                it[question]= "What is 110111011"
+                it[points] = 400
+                it[categoryId] = 6
+                it[done] = false
+            }
+            Answers.insert {
+                it[answer]= "The port number for MySQL (3306)"
+                it[question]= "What is 110011101010"
+                it[points] = 500
+                it[categoryId] = 6
                 it[done] = false
             }
         }
