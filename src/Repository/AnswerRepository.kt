@@ -4,7 +4,6 @@ import dk.w4.Repository.DatabaseFactory.dbQuery
 import dk.w4.model.Answer
 import dk.w4.model.Answers
 import dk.w4.model.Categories
-import org.jetbrains.exposed.dao.EntityID
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
 

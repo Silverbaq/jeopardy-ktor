@@ -31,243 +31,203 @@ object DatabaseFactory {
 
              */
             Categories.insert{
-                it[name]  ="My Favorites"
+                it[name]  ="Then there is JS"
             }
             Categories.insert{
-                it[name]  ="Born’n’rasied"
+                it[name]  ="Beard styles"
             }
             Categories.insert{
-                it[name]  ="GameBoy Accessories"
+                it[name]  ="They took 'er jobs!"
             }
             Categories.insert{
-                it[name]  ="IT you say... Easy!"
+                it[name]  ="That's Bruce"
             }
             Categories.insert{
-                it[name]  ="Fun facts"
-            }
-            Categories.insert {
-                it[name] = "Computer ports as binaries"
+                it[name]  ="Let me Google that"
             }
 
-            // My Favorites
+            // Events
             Answers.insert {
-                it[answer]= "https://i.ibb.co/MCmZThf/lasagne.jpg"
-                it[question]= "What is lasagne"
+                it[answer]= "[] + []"
+                it[question]= "What is \"\" (Empty string)"
                 it[points] = 100
                 it[categoryId] = 1
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://i.ibb.co/Yt0Tx4Z/siliconvalley.jpg"
-                it[question]= "What is Silicon Valley"
+                it[answer]= "{} + []"
+                it[question]= "What is 0"
                 it[points] = 200
                 it[categoryId] = 1
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://i.ibb.co/DVpT4gk/kotlin.png"
-                it[question]= "What is Kotlin"
+                it[answer]= "[] + {}"
+                it[question]= "What is [object Object]"
                 it[points] = 300
                 it[categoryId] = 1
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://i.ibb.co/JQ4VG5X/sevablodda.jpg"
-                it[question]= "What is Sevablødda"
+                it[answer]= "{} + {}"
+                it[question]= "What is NaN (Not a Number)"
                 it[points] = 400
                 it[categoryId] = 1
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://i.ibb.co/3FH5rL5/darknet.jpg"
-                it[question]= "What is Darknet diaries"
+                it[answer]= "Array(16).join(\"word\" -1) + \" Batman!\""
+                it[question]= "What is \"NaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaN Batman!\""
                 it[points] = 500
                 it[categoryId] = 1
                 it[done] = false
             }
 
-            // Born’n’rasied
+            // Beards
             Answers.insert {
-                it[answer]= "Name of the local railroad from my childhood. Which also has a “famous” danish song."
-                it[question]= "What is VLTJ"
+                it[answer]= "https://images.vps.w4.dk/PUP0s.jpg"
+                it[question]= "What is a \"Power beard\""
                 it[points] = 100
                 it[categoryId] = 2
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "The city where I was raised "
-                it[question]= "What is Vrist"
+                it[answer]= "https://images.vps.w4.dk/T879D.jpg"
+                it[question]= "What is a shave (No beard)"
                 it[points] = 200
                 it[categoryId] = 2
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "The city where I went to primary school"
-                it[question]= "What is Harboøre"
+                it[answer]= "https://images.vps.w4.dk/x0dDC.jpg"
+                it[question]= "What is a \"Horseshoe mustache\""
                 it[points] = 300
                 it[categoryId] = 2
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "The hospital where I was born"
-                it[question]= "What is Holstebro"
+                it[answer]= "https://images.vps.w4.dk/0UXnj.png"
+                it[question]= "What is a \"Chin strap\""
                 it[points] = 400
                 it[categoryId] = 2
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "The city I started playing basketball in"
-                it[question]= "What is Lemvig"
+                it[answer]= "https://images.vps.w4.dk/96Act.jpg"
+                it[question]= "What is a \"Short boxed beard\""
                 it[points] = 500
                 it[categoryId] = 2
                 it[done] = false
             }
 
-            // GameBoy Accessories
+            // They took 'er jobs!
             Answers.insert {
-                it[answer]= "https://i.ibb.co/87FqZLr/symaskine.jpg"
-                it[question]= "What is the Game Boy sewing machine"
+                it[answer]= "https://images.vps.w4.dk/NlgG3.jpg"
+                it[question]= "What is a Mink farmer"
                 it[points] = 100
                 it[categoryId] = 3
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://i.ibb.co/1mFvLTk/Fishing-Accessory.jpg"
-                it[question]= "What is the Game Boy Sonar"
+                it[answer]= "https://images.vps.w4.dk/LarTQ.jpg"
+                it[question]= "What is a teacher"
                 it[points] = 200
                 it[categoryId] = 3
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://i.ibb.co/FV5JDfM/Game-Boy-Printer.jpg"
-                it[question]= "What is the Game Boy Printer"
+                it[answer]= "https://images.vps.w4.dk/XalEB.jpg"
+                it[question]= "What is IT-Support"
                 it[points] = 300
                 it[categoryId] = 3
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://i.ibb.co/4FTQ529/Game-Boy-Camera.jpg"
-                it[question]= "What is the Game Boy Camera"
+                it[answer]= "https://images.vps.w4.dk/Yzne9.jpg"
+                it[question]= "What is jobless (A-kasse)"
                 it[points] = 400
                 it[categoryId] = 3
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://i.ibb.co/SRGbdTQ/Pedi-Sedate.jpg"
-                it[question]= "What is the Pedi Sedater"
+                it[answer]= "https://images.vps.w4.dk/YfJCu.jpg"
+                it[question]= "What is a DJ/Producer"
                 it[points] = 500
                 it[categoryId] = 3
                 it[done] = false
             }
 
-            // IT you say... Easy!
+            // That's Bruce
             Answers.insert {
-                it[answer]= "https://i.ibb.co/3TnHh36/mastersystem.jpg"
-                it[question]= "What is the Sega Master System"
+                it[answer]= "https://images.vps.w4.dk/3vcwk.jpg"
+                it[question]= "Who is Bruce Wayne"
                 it[points] = 100
                 it[categoryId] = 4
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://i.ibb.co/zSZhKSK/486.jpg"
-                it[question]= "What is the 80486 (66 Mhz, 4 MB RAM"
+                it[answer]= "https://images.vps.w4.dk/dLHT3.jpg"
+                it[question]= "Who is Bruce Banner"
                 it[points] = 200
                 it[categoryId] = 4
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://i.ibb.co/p2fq0Jd/1024px-Amstrad-CPC464.jpg"
-                it[question]= "What is the Amstrad CPC 464"
+                it[answer]= "https://images.vps.w4.dk/CCZVz.jpg"
+                it[question]= "Who is Bruce Lee"
                 it[points] = 300
                 it[categoryId] = 4
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://i.ibb.co/bBrtHZz/hero.jpg"
-                it[question]= "What is HTC Hero"
+                it[answer]= "https://images.vps.w4.dk/rdNAk.jpg"
+                it[question]= "Who is Bruce Almighty"
                 it[points] = 400
                 it[categoryId] = 4
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "Array(16).join('wat' - 1) + ' Batman!'"
-                it[question]= "What is \"NaNNaNNaNNaNNaNNaNNaNNaNNaN\nNaNNaNNaNNaNNaNNaN Batman!\""
+                it[answer]= "https://images.vps.w4.dk/y0n02.jpg"
+                it[question]= "Who is Bruce Gordon"
                 it[points] = 500
                 it[categoryId] = 4
                 it[done] = false
             }
 
-            // Fun Facts
+            // Let me Google that
             Answers.insert {
-                it[answer]= "The day I was born"
-                it[question]= "What is the 18th of Septemper, 1983"
+                it[answer]= "#!"
+                it[question]= "What is \"Shebang\""
                 it[points] = 100
                 it[categoryId] = 5
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "The amount of years lived in Odense"
-                it[question]= "What is 12 years"
+                it[answer]= "The date for \"International talk like a pirate day\""
+                it[question]= "When is \"19th of September\""
                 it[points] = 200
                 it[categoryId] = 5
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "My profession, before I moved to Odense"
-                it[question]= "What is a Minkfarmer"
+                it[answer]= "https:// 011001110110111101101111011001110110110001100101.com"
+                it[question]= "What is \"Google Binary\""
                 it[points] = 300
                 it[categoryId] = 5
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://i.ibb.co/xCWDCL4/93points.jpg"
-                it[question]= "What is 93 points"
+                it[answer]= "#00FFFF"
+                it[question]= "What is \"Cyan\""
                 it[points] = 400
                 it[categoryId] = 5
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "The only exam Ive have ever cheated in"
-                it[question]= "What is Advanced Operating system"
+                it[answer]= "https://images.vps.w4.dk/5zf7w.png"
+                it[question]= "What is \"Rickrolling\""
                 it[points] = 500
                 it[categoryId] = 5
-                it[done] = false
-            }
-
-            // Computer ports as binaries
-            Answers.insert {
-                it[answer]= "The port number for FTP (21)"
-                it[question]= "What is 10101"
-                it[points] = 100
-                it[categoryId] = 6
-                it[done] = false
-            }
-            Answers.insert {
-                it[answer]= "The port number for SSH (22)"
-                it[question]= "What is 10110"
-                it[points] = 200
-                it[categoryId] = 6
-                it[done] = false
-            }
-            Answers.insert {
-                it[answer]= "The port number for HTTP (80)"
-                it[question]= "What is 1010000"
-                it[points] = 300
-                it[categoryId] = 6
-                it[done] = false
-            }
-            Answers.insert {
-                it[answer]= "The port number for HTTPS (443)"
-                it[question]= "What is 110111011"
-                it[points] = 400
-                it[categoryId] = 6
-                it[done] = false
-            }
-            Answers.insert {
-                it[answer]= "The port number for MySQL (3306)"
-                it[question]= "What is 110011101010"
-                it[points] = 500
-                it[categoryId] = 6
                 it[done] = false
             }
         }

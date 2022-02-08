@@ -30,7 +30,6 @@ class CategoryRepository : Repository<Category> {
     override suspend fun getAll(): List<Category> = dbQuery {
         Categories.selectAll().map {
             val answers = Answers.select{ Answers.categoryId eq it[Categories.id] }.map { toAnswer(it) }
-
             toCategory(it, answers)
         }
 
