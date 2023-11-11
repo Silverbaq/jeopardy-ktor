@@ -155,6 +155,7 @@ function showRandomVideo() {
     }, randomVideo[1] * 1000);
 }
 
+var videoIndex = 0;
 function getRansomVideo() {
     var myArray = [
         ["https://img-9gag-fun.9cache.com/photo/a9R51qZ_460sv.mp4", 11],
@@ -173,12 +174,13 @@ function getRansomVideo() {
         ["https://img-9gag-fun.9cache.com/photo/ag578dw_460sv.mp4", 9],
         ["https://img-9gag-fun.9cache.com/photo/an52gEV_460svav1.mp4", 11]
     ]
-    return myArray[Math.floor(Math.random() * myArray.length)];
+    //return myArray[Math.floor(Math.random() * myArray.length)];
+    return myArray[videoIndex++];
 }
 
+var imageIndex = 0;
 function getRandomImage() {
     var myArray = [
-        "https://i.kym-cdn.com/entries/icons/original/000/005/220/wizard.jpg",
         "https://img-9gag-fun.9cache.com/photo/aN0Q9Yb_460swp.webp",
         "https://img-9gag-fun.9cache.com/photo/abr4eB9_460swp.webp",
         "https://img-9gag-fun.9cache.com/photo/az1K2pm_460swp.webp",
@@ -200,7 +202,9 @@ function getRandomImage() {
         "https://img-9gag-fun.9cache.com/photo/a4RNyMw_460swp.webp",
         "https://img-9gag-fun.9cache.com/photo/aQ17zbr_460swp.webp"
     ];
-    return myArray[Math.floor(Math.random() * myArray.length)];
+    //return myArray[Math.floor(Math.random() * myArray.length)];
+
+    return myArray[imageIndex++];
 }
 
 function clearDisplay() {
