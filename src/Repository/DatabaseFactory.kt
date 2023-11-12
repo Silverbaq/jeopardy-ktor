@@ -11,7 +11,10 @@ import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.transactions.transaction
 
 object DatabaseFactory {
-    fun init(){
+    val imageHeight = 500
+    val trueOrFalse = 200
+
+    fun init() {
         Database.connect(hikari())
 
         transaction {
@@ -27,202 +30,205 @@ object DatabaseFactory {
                 it[name] = "team2"
                 it[points] = 0
             }
-            Categories.insert{
-                it[name]  ="Året der gik"
+            Categories.insert {
+                it[name] = "Injection Exploits"
             }
-            Categories.insert{
-                it[name]  ="The future"
+            Categories.insert {
+                it[name] = "True or False"
             }
-            Categories.insert{
-                it[name]  ="Misc"
+            Categories.insert {
+                it[name] = "Port numbers as Binary"
             }
-            Categories.insert{
-                it[name]  ="Hold my beer, I got this!?!"
+            Categories.insert {
+                it[name] = "OS codenames"
             }
-            Categories.insert{
-                it[name]  ="It's over 9k"
+            Categories.insert {
+                it[name] = "Linux man pages"
             }
 
-            // Året der gik
+            // Injection Exploits
             Answers.insert {
-                it[answer]= "https://www.thoughtco.com/thmb/pG4De9t7aRBTSx-aGdaiEDO-F4E=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-573083127-593894665f4a4ae7b923d6b9b2058edb.jpg"
-                it[question]= "Hvem er/skal gift(es)"
+                it[answer] = "https://images.vps.w4.dk/qJWgc.jpg?h=$imageHeight"
+                it[question] = "What is SQL Injection (SQLi)?"
                 it[points] = 100
                 it[categoryId] = 1
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://i.redd.it/1w7d067081w21.png"
-                it[question]= "Hvad er \"Sonic the hedgehog (2019)\""
+                it[answer] = "https://images.vps.w4.dk/GaWIi.png?h=$imageHeight"
+                it[question] = "What is Cross Site Script (XSS)?"
                 it[points] = 200
                 it[categoryId] = 1
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://lumiere-a.akamaihd.net/v1/images/star-wars-the-rise-of-skywalker-theatrical-poster-1000_ebc74357.jpeg"
-                it[question]= "Hvad er den sidste film i Star Wars historien (The rise of Skywalker)"
+                it[answer] = "https://images.vps.w4.dk/Oe7AN.png?h=$imageHeight"
+                it[question] = "What is Log4Shell (Log4J)?"
                 it[points] = 300
                 it[categoryId] = 1
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://cdn.cnn.com/cnnnext/dam/assets/191121212606-tesla-cybertruck-exlarge-169.jpg"
-                it[question]= "Hvad er \"Tesla Truck\""
+                it[answer] = "https://images.vps.w4.dk/Z5u1K.png?h=$imageHeight"
+                it[question] = "What is ShellShock?"
                 it[points] = 400
                 it[categoryId] = 1
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://bt.bmcdn.dk/media/cache/resolve/image_1240/image/124/1240630/22559564-four-hills-ski-jumping-tournam.jpeg"
-                it[question]= "Hvad er \"1. Januar 2019\""
+                it[answer] = "https://images.vps.w4.dk/jicc1.jpg?h=$imageHeight"
+                it[question] = "What is Eternal Blue?"
                 it[points] = 500
                 it[categoryId] = 1
                 it[done] = false
             }
 
-            //The future
+
+            //True or False
             Answers.insert {
-                it[answer]= "https://ekstrabladet.dk/migration_catalog/article3918567.ece/IMAGE_ALTERNATES/relationBig/delorean"
-                it[question]= "Hvad er \"Tilbage til fremtiden (Back to the future)\""
+                it[answer] = "https://images.vps.w4.dk/QGpsS.jpg?h=$trueOrFalse" // ArnoldC (True)
+                it[question] = "What is True?"
                 it[points] = 100
                 it[categoryId] = 2
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://dygtyjqp7pi0m.cloudfront.net/i/35892/30933362_2.jpg?v=8D608586A9E3000"
-                it[question]= "Hvad er \"Time machine\""
+                it[answer] = "https://images.vps.w4.dk/IVjli.jpg?h=$trueOrFalse" // LOLCODE
+                it[question] = "What is False?"
                 it[points] = 200
                 it[categoryId] = 2
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://i.ebayimg.com/images/g/lHMAAOxydlFSxp~h/s-l300.jpg"
-                it[question]= "Hvad er \"Dr. Who\""
+                it[answer] = "https://images.vps.w4.dk/lfCrZ.jpg?h=$trueOrFalse" // Brain fuck
+                it[question] = "What is True?"
                 it[points] = 300
                 it[categoryId] = 2
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://i1.wp.com/snesaday.com/wp-content/uploads/Teenage-Mutant-Ninja-Turtles-IV-Turtles-in-Time-FI-e1455392989805.png?resize=1024%2C576&ssl=1"
-                it[question]= "Hvad er \"Turtles in time\""
+                it[answer] = "https://images.vps.w4.dk/HFpiu.jpg?h=$trueOrFalse" // Whitespace
+                it[question] = "What is False?"
                 it[points] = 400
                 it[categoryId] = 2
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "Stiv pik og vind i håret"
-                it[question]= "Hvad er 2020"
+                it[answer] = "https://images.vps.w4.dk/eLYtQ.jpg?h=$trueOrFalse" // Spakespeare
+                it[question] = "What is False?"
                 it[points] = 500
                 it[categoryId] = 2
                 it[done] = false
             }
 
-            // Misc
+            // Port numbers as Binary
             Answers.insert {
-                it[answer]= "42"
-                it[question]= "Hvad er svaret på livet, universet og det hele."
+                it[answer] = "10101"
+                it[question] = "What is FTP (21)?"
                 it[points] = 100
                 it[categoryId] = 3
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "1.5V"
-                it[question]= "Hvad er spændingen for et AA batteri"
+                it[answer] = "10110"
+                it[question] = "What is SSH (22)?"
                 it[points] = 200
                 it[categoryId] = 3
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "nnamhoL"
-                it[question]= "Hvad er \"Lohmann\" stavet spejlvendt"
+                it[answer] = "11001"
+                it[question] = "What is SMTP (25)?"
                 it[points] = 300
                 it[categoryId] = 3
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://i.imgur.com/FR2nN.jpg"
-                it[question]= "Hvad er GameBoy symaskinen"
+                it[answer] = "1010000"
+                it[question] = "What is HTTP (80)?"
                 it[points] = 400
                 it[categoryId] = 3
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "18-09-1983"
-                it[question]= "Hvad er Steffens fødselsdag"
+                it[answer] = "110111011"
+                it[question] = "What is HTTPS (443)?"
                 it[points] = 500
                 it[categoryId] = 3
                 it[done] = false
             }
 
-            // Hold my beer, I got this!?!
+            // OS codenames
             Answers.insert {
-                it[answer]= "https://www.sentinelone.com/wp-content/uploads/2019/05/10-Sean-Dillons-Ruby-script.jpg"
-                it[question]= "Hvad er \"Eternal blue\""
+                it[answer] = "The code name for Microsoft Windows XP, which was released in 2001."
+                it[question] = "What is \"Whistler\"?"
                 it[points] = 100
                 it[categoryId] = 4
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://helloacm.com/wp-images/acm/2012/bf2.jpg"
-                it[question]= "Hvad er \"Brain fuck\""
+                it[answer] = "The code name for Apple's macOS version 10.11, which was released in 2015."
+                it[question] = "What is \"El Capitan\"?"
                 it[points] = 200
                 it[categoryId] = 4
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://lineastone.co.nz/wp-content/uploads/fly-images/350/1141-Pure-White-400x300-cc.jpg"
-                it[question]= "Hvad er \"White-space\""
+                it[answer] = "The code name for Android version 4.4, which was released in 2013."
+                it[question] = "What is \"KitKat\"?"
                 it[points] = 300
                 it[categoryId] = 4
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQsoF8udf_4-bXaDfXUmiyV77u6iY3yX1AIe3xEKGCh-BH4_Xct"
-                it[question]= "Hvad er \"JSFuck\""
+                it[answer] = "The code name for Ubuntu version 18.04, which was released in 2018."
+                it[question] = "What is \"Bionic Beaver\"?"
                 it[points] = 400
                 it[categoryId] = 4
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "Array(16).join('wat' - 1) + ' Batman!'"
-                it[question]= "Hvad er \"NaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaN Batman!\""
+                it[answer] = "The code name for Google Chrome OS, which was was released on Chromebook Pixel in 2015."
+                it[question] = "What is \"Samus\"?"
                 it[points] = 500
                 it[categoryId] = 4
                 it[done] = false
             }
 
-            // It's over 9k
+            // Linux man pages
             Answers.insert {
-                it[answer]= "http://team-sort.dk/student/Michael_Sort_student23.jpg"
-                it[question]= "Hvem er \"Michael Sort\""
+                it[answer] = "For each operand that names a file of a type other than directory"
+                it[question] = "What is \"ls\"?"
                 it[points] = 100
                 it[categoryId] = 5
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "http://team-sort.dk/student/Michael_Sort_student03.jpg"
-                it[question]= "Hvem er \"Michael Sort\""
+                it[answer] = "is a flexible tool for interrogating DNS name servers."
+                it[question] = "What is \"dig\"?"
                 it[points] = 200
                 it[categoryId] = 5
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "http://team-sort.dk/student/Michael_Sort_student20.jpg"
-                it[question]= "Hvem er \"Michael Sort\""
+                it[answer] =
+                    "is a program for logging into a remote machine and for executing commands on a remote machine"
+                it[question] = "What is \"ssh\"?"
                 it[points] = 300
                 it[categoryId] = 5
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "http://team-sort.dk/student/Michael_Sort_student19.jpg"
-                it[question]= "Hvem er \"Michael Sort\""
+                it[answer] =
+                    "The utility is used to assign an address to a network interface and/or configure network interface parameters."
+                it[question] = "What is \"ifconfig\"?"
                 it[points] = 400
                 it[categoryId] = 5
                 it[done] = false
             }
             Answers.insert {
-                it[answer]= "https://images.bonnier.cloud/files/ill/production/2018/10/13214753/michael-jackson-til-body.jpg"
-                it[question]= "Hvem er \"Michael Sort\""
+                it[answer] = "is an open source tool for network exploration and security auditing"
+                it[question] = "What is \"nmap\"?"
                 it[points] = 500
                 it[categoryId] = 5
                 it[done] = false
@@ -242,7 +248,8 @@ object DatabaseFactory {
     }
 
     suspend fun <T> dbQuery(
-        block: () -> T): T =
+        block: () -> T
+    ): T =
         withContext(Dispatchers.IO) {
             transaction { block() }
         }
