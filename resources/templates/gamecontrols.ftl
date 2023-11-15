@@ -24,8 +24,18 @@
             </div>
             <div class="col-3">
                 <form method="post" action="/gamecontrols">
-                    <input type="hidden" name="action" value="showFinalRound">
-                    <input type="submit" value="Show final round"/>
+                    <input type="hidden" name="action" value="showFinalCategory">
+                    <input type="submit" value="Show final round/category"/>
+                </form>
+
+                <form method="post" action="/gamecontrols">
+                    <input type="hidden" name="action" value="showFinalAnswer">
+                    <input type="submit" value="Show final answer"/>
+                </form>
+
+                <form method="post" action="/gamecontrols">
+                    <input type="hidden" name="action" value="showFinalQuestion">
+                    <input type="submit" value="Show final question"/>
                 </form>
             </div>
         </div>

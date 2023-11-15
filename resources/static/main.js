@@ -95,8 +95,16 @@ function commandControl(input) {
             revealQuestion();
             break;
         case "SHOW_FINAL_CATEGORY":
+            displayAnswer()
             showFinalCategory(data["category"]);
             break;
+        case "SHOW_FINAL_ANSWER":
+            clearDisplay()
+            showFinalAnswer(data["category"], data["answer"], data["question"])
+            break
+        case "SHOW_FINAL_QUESTION":
+            revealQuestion()
+            break
         default:
             console.log("Wrong command!")
     }
@@ -347,49 +355,47 @@ function revealQuestion() {
 }
 
 function showFinalCategory(data) {
-    $("#gameboard").hide()
-
     console.log("generateAnswer" + data)
+
     var answerContainer = document.getElementById("answer")
     answerContainer.className = "container"
     var container = document.createElement("div")
     container.className = "row justify-content-center"
     answerContainer.append(container)
 
-    var h1Category = document.createElement("h1")
-    h1Category.textContent = data["category"]
+    var h1Answer = document.createElement("h1")
+    h1Answer.textContent = data
 
-    container.append(h1Category)
+    container.append(h1Answer)
+
+    console.log(h1Answer)
 }
 
-
-function showFinalQuestion(data) {
-    $("#gameboard").hide()
-
-    console.log("generateAnswer" + data)
+function showFinalAnswer(category, answer, question) {
     var answerContainer = document.getElementById("answer")
     answerContainer.className = "container"
     var container = document.createElement("div")
     container.className = "row justify-content-center"
     answerContainer.append(container)
 
-    var h1Category = document.createElement("h1")
-    h1Category.textContent = data["category"]
+    var h1Answer = document.createElement("h1")
+    h1Answer.textContent = answer
 
-    container.append(h1Category)
+    container.append(h1Answer)
+
 
     var container2 = document.createElement("div")
     container2.className = "row justify-content-center"
     container2.id = "question"
+    $(container2).hide()
     answerContainer.append(container2)
 
 
     var theQuestion = document.createElement("h1")
-    theQuestion.textContent = data["question"]
+    theQuestion.textContent = question
 
     container2.append(theQuestion)
 }
-
 
 function displayBoard() {
     $('#answer').hide()

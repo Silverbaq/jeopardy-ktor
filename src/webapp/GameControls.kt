@@ -57,9 +57,19 @@ fun Route.gamecontrols(
                 jeopardyServer.randomVideo()
                 call.redirect(GameControls())
             }
-            "showFinalRound" -> {
+            "showFinalCategory" -> {
                 val finalRound = finalsRoundRepository.getAll().first()
                 jeopardyServer.showFinalCategory(finalRound)
+                call.redirect(GameControls())
+            }
+            "showFinalAnswer" -> {
+                val finalRound = finalsRoundRepository.getAll().first()
+                jeopardyServer.showFinalAnswer(finalRound)
+                call.redirect(GameControls())
+            }
+            "showFinalQuestion" -> {
+                val finalRound = finalsRoundRepository.getAll().first()
+                jeopardyServer.showFinalQuestion(finalRound)
                 call.redirect(GameControls())
             }
             "addPoints" -> {

@@ -41,13 +41,13 @@ class JeopardyServer : Jeopardy {
     }
 
     override suspend fun showFinalAnswer(final: FinalsRound) {
-        val cmd = Command(SHOW_FINAL_ANSWER, FinalAnswer(final.category, final.answer))
+        val cmd = Command(SHOW_FINAL_ANSWER, FinalAnswer(final.category, final.answer, final.question))
         val json = Gson().toJson(cmd)
         broadcastMessage(json)
     }
 
     override suspend fun showFinalQuestion(final: FinalsRound) {
-        val cmd = Command(SHOW_FINAL_QUESTION, FinalQuestion(final.category, final.answer, final.question))
+        val cmd = Command(SHOW_FINAL_QUESTION, FinalQuestion())
         val json = Gson().toJson(cmd)
         broadcastMessage(json)
     }
@@ -119,8 +119,8 @@ class JeopardyServer : Jeopardy {
     data class TeamPointsData(val teamName: String, val points: Int) : ClientData
     data class FinalCategory(val category: String) : ClientData
 
-    data class FinalAnswer(val category: String, val answer: String) : ClientData
-    data class FinalQuestion(val category: String, val answer: String, val question: String) : ClientData
+    data class FinalAnswer(val category: String, val answer: String, val question: String) : ClientData
+    class FinalQuestion : ClientData
     class EmptyData : ClientData
 
     companion object {
@@ -132,7 +132,7 @@ class JeopardyServer : Jeopardy {
         private const val VIDEO = "VIDEO"
         private const val SHOW_ANSWER = "SHOW_ANSWER"
         private const val SHOW_FINAL_CATEGORY = "SHOW_FINAL_CATEGORY"
-        private const val SHOW_FINAL_ANSWER = "SHOW_FINAL_CATEGORY"
+        private const val SHOW_FINAL_ANSWER = "SHOW_FINAL_ANSWER"
         private const val SHOW_FINAL_QUESTION = "SHOW_FINAL_QUESTION"
     }
 }
