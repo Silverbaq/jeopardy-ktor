@@ -28,7 +28,8 @@ fun Route.gamecontrols(
 ) {
     get<GameControls> {
         val categories = categoryRepository.getAll()
-        call.respond(FreeMarkerContent("gamecontrols.ftl", mapOf("categories" to categories)))
+        val teams = teamDB.getAll()
+        call.respond(FreeMarkerContent("gamecontrols.ftl", mapOf("categories" to categories, "teams" to teams)))
     }
     post<GameControls> {
         val params = call.receiveParameters()
@@ -52,6 +53,27 @@ fun Route.gamecontrols(
             }
             "random-video" -> {
                 jeopardyServer.randomVideo()
+                call.redirect(GameControls())
+            }
+            "showFinalRound" -> {
+                val category = categoryRepository.getAll().first()
+                jeopardyServer.showFinalCategory(category)
+                call.redirect(GameControls())
+            }
+            "addPoints" -> {
+                val id = params["id"] ?: throw IllegalArgumentException("Missing parameter: Id")
+                val points = params["points"]?: throw IllegalArgumentException("Missing parameter: Points")
+
+                val team = teamDB.getById(id)?: throw IllegalArgumentException("No team found by id $id")
+                teamDB.updateTeamPoints(team.id, team.points + points.toInt())
+                call.redirect(GameControls())
+            }
+            "subPoints" -> {
+                val id = params["id"] ?: throw IllegalArgumentException("Missing parameter: Id")
+                val points = params["points"]?: throw IllegalArgumentException("Missing parameter: Points")
+
+                val team = teamDB.getById(id)?: throw IllegalArgumentException("No team found by id $id")
+                teamDB.updateTeamPoints(team.id, team.points - points.toInt())
                 call.redirect(GameControls())
             }
         }

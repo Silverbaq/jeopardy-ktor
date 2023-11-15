@@ -94,6 +94,9 @@ function commandControl(input) {
         case "SHOW_ANSWER":
             revealQuestion();
             break;
+        case "SHOW_FINAL_CATEGORY":
+            showFinalCategory(data["category"]);
+            break;
         default:
             console.log("Wrong command!")
     }
@@ -156,6 +159,7 @@ function showRandomVideo() {
 }
 
 var videoIndex = 0;
+
 function getRansomVideo() {
     var myArray = [
         ["https://img-9gag-fun.9cache.com/photo/a9R51qZ_460sv.mp4", 11],
@@ -179,6 +183,7 @@ function getRansomVideo() {
 }
 
 var imageIndex = 0;
+
 function getRandomImage() {
     var myArray = [
         "https://img-9gag-fun.9cache.com/photo/aN0Q9Yb_460swp.webp",
@@ -340,6 +345,51 @@ function revealQuestion() {
     console.log("trying to show")
     $("#question").show()
 }
+
+function showFinalCategory(data) {
+    $("#gameboard").hide()
+
+    console.log("generateAnswer" + data)
+    var answerContainer = document.getElementById("answer")
+    answerContainer.className = "container"
+    var container = document.createElement("div")
+    container.className = "row justify-content-center"
+    answerContainer.append(container)
+
+    var h1Category = document.createElement("h1")
+    h1Category.textContent = data["category"]
+
+    container.append(h1Category)
+}
+
+
+function showFinalQuestion(data) {
+    $("#gameboard").hide()
+
+    console.log("generateAnswer" + data)
+    var answerContainer = document.getElementById("answer")
+    answerContainer.className = "container"
+    var container = document.createElement("div")
+    container.className = "row justify-content-center"
+    answerContainer.append(container)
+
+    var h1Category = document.createElement("h1")
+    h1Category.textContent = data["category"]
+
+    container.append(h1Category)
+
+    var container2 = document.createElement("div")
+    container2.className = "row justify-content-center"
+    container2.id = "question"
+    answerContainer.append(container2)
+
+
+    var theQuestion = document.createElement("h1")
+    theQuestion.textContent = data["question"]
+
+    container2.append(theQuestion)
+}
+
 
 function displayBoard() {
     $('#answer').hide()

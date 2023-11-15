@@ -114,7 +114,7 @@ object DatabaseFactory {
                 it[done] = false
             }
             Answers.insert {
-                it[answer] = "https://images.vps.w4.dk/eLYtQ.jpg?h=$trueOrFalse" // Spakespeare
+                it[answer] = "https://images.vps.w4.dk/eLYtQ.jpg?h=$imageHeight" // Spakespeare
                 it[question] = "What is False?"
                 it[points] = 500
                 it[categoryId] = 2

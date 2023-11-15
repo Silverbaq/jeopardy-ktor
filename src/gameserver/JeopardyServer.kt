@@ -33,6 +33,12 @@ class JeopardyServer : Jeopardy {
         broadcastMessage(json)
     }
 
+    override suspend fun showFinalCategory(category: Category) {
+        val cmd = Command(SHOW_FINAL_CATEGORY, FinalCategory(category.name))
+        val json = Gson().toJson(cmd)
+        broadcastMessage(json)
+    }
+
     suspend fun clientJoin(name: String, socket: WebSocketSession) {
         val list = boardClients.computeIfAbsent(name) { CopyOnWriteArrayList<WebSocketSession>() }
         list.add(socket)
@@ -98,6 +104,7 @@ class JeopardyServer : Jeopardy {
     data class GameBoard(val teams: MutableList<Team>, val categories: MutableList<Category>) : ClientData
     data class AnswerData(val teams: MutableList<Team>, val answer: Answer) : ClientData
     data class TeamPointsData(val teamName: String, val points: Int): ClientData
+    data class FinalCategory(val category: String) : ClientData
     class EmptyData: ClientData
 
     companion object {
@@ -108,5 +115,6 @@ class JeopardyServer : Jeopardy {
         private const val IMAGE = "IMAGE"
         private const val VIDEO = "VIDEO"
         private const val SHOW_ANSWER = "SHOW_ANSWER"
+        private const val SHOW_FINAL_CATEGORY = "SHOW_FINAL_CATEGORY"
     }
 }
