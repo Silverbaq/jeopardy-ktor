@@ -3,6 +3,7 @@ package dk.w4.gameserver
 import com.google.gson.Gson
 import dk.w4.model.Answer
 import dk.w4.model.Category
+import dk.w4.model.FinalsRound
 import dk.w4.model.Team
 import io.ktor.http.cio.websocket.Frame
 import io.ktor.http.cio.websocket.WebSocketSession
@@ -33,8 +34,20 @@ class JeopardyServer : Jeopardy {
         broadcastMessage(json)
     }
 
-    override suspend fun showFinalCategory(category: Category) {
-        val cmd = Command(SHOW_FINAL_CATEGORY, FinalCategory(category.name))
+    override suspend fun showFinalCategory(final: FinalsRound) {
+        val cmd = Command(SHOW_FINAL_CATEGORY, FinalCategory(final.category))
+        val json = Gson().toJson(cmd)
+        broadcastMessage(json)
+    }
+
+    override suspend fun showFinalAnswer(final: FinalsRound) {
+        val cmd = Command(SHOW_FINAL_ANSWER, FinalAnswer(final.category, final.answer))
+        val json = Gson().toJson(cmd)
+        broadcastMessage(json)
+    }
+
+    override suspend fun showFinalQuestion(final: FinalsRound) {
+        val cmd = Command(SHOW_FINAL_QUESTION, FinalQuestion(final.category, final.answer, final.question))
         val json = Gson().toJson(cmd)
         broadcastMessage(json)
     }
@@ -71,7 +84,7 @@ class JeopardyServer : Jeopardy {
         }
     }
 
-    suspend fun showAnswer(){
+    suspend fun showAnswer() {
         val cmd = Command(SHOW_ANSWER, EmptyData())
         val json = Gson().toJson(cmd)
         broadcastMessage(json)
@@ -103,9 +116,12 @@ class JeopardyServer : Jeopardy {
     data class Command(val cmd: String, val data: ClientData)
     data class GameBoard(val teams: MutableList<Team>, val categories: MutableList<Category>) : ClientData
     data class AnswerData(val teams: MutableList<Team>, val answer: Answer) : ClientData
-    data class TeamPointsData(val teamName: String, val points: Int): ClientData
+    data class TeamPointsData(val teamName: String, val points: Int) : ClientData
     data class FinalCategory(val category: String) : ClientData
-    class EmptyData: ClientData
+
+    data class FinalAnswer(val category: String, val answer: String) : ClientData
+    data class FinalQuestion(val category: String, val answer: String, val question: String) : ClientData
+    class EmptyData : ClientData
 
     companion object {
         private const val BOARD = "BOARD"
@@ -116,5 +132,7 @@ class JeopardyServer : Jeopardy {
         private const val VIDEO = "VIDEO"
         private const val SHOW_ANSWER = "SHOW_ANSWER"
         private const val SHOW_FINAL_CATEGORY = "SHOW_FINAL_CATEGORY"
+        private const val SHOW_FINAL_ANSWER = "SHOW_FINAL_CATEGORY"
+        private const val SHOW_FINAL_QUESTION = "SHOW_FINAL_QUESTION"
     }
 }

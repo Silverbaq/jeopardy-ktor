@@ -2,6 +2,7 @@ package dk.w4.gameserver
 
 import dk.w4.model.Answer
 import dk.w4.model.Category
+import dk.w4.model.FinalsRound
 import dk.w4.model.Team
 
 interface Jeopardy {
@@ -12,5 +13,7 @@ interface Jeopardy {
     suspend fun refresh(teams: List<Team>, categories: List<Category>)
     suspend fun randomImage()
     suspend fun randomVideo()
-    suspend fun showFinalCategory(finalCategory: Category)
+    suspend fun showFinalCategory(final: FinalsRound)
+    suspend fun showFinalAnswer(final: FinalsRound)
+    suspend fun showFinalQuestion(final: FinalsRound)
 }

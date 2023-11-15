@@ -21,6 +21,7 @@ object DatabaseFactory {
             SchemaUtils.create(Teams)
             SchemaUtils.create(Categories)
             SchemaUtils.create(Answers)
+            SchemaUtils.create(FinalsRounds)
 
             Teams.insert {
                 it[name] = "team1"
@@ -232,6 +233,13 @@ object DatabaseFactory {
                 it[points] = 500
                 it[categoryId] = 5
                 it[done] = false
+            }
+
+            // Final round
+            FinalsRounds.insert {
+                it[category] = "Viruses and Malware"
+                it[answer] = "Considered the first PC virus, it targeted IBM PC systems and was spread via floppy disks."
+                it[question] = "What is \"Brain\"?"
             }
         }
     }

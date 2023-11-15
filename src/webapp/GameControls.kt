@@ -2,6 +2,7 @@ package dk.w4.webapp
 
 import dk.w4.Repository.AnswerRepository
 import dk.w4.Repository.CategoryRepository
+import dk.w4.Repository.FinalsRoundRepository
 import dk.w4.Repository.TeamRepository
 import dk.w4.gameserver.Jeopardy
 import dk.w4.model.Answer
@@ -24,6 +25,7 @@ fun Route.gamecontrols(
     teamDB: TeamRepository,
     categoryRepository: CategoryRepository,
     answerRepository: AnswerRepository,
+    finalsRoundRepository: FinalsRoundRepository,
     jeopardyServer: Jeopardy
 ) {
     get<GameControls> {
@@ -56,8 +58,8 @@ fun Route.gamecontrols(
                 call.redirect(GameControls())
             }
             "showFinalRound" -> {
-                val category = categoryRepository.getAll().first()
-                jeopardyServer.showFinalCategory(category)
+                val finalRound = finalsRoundRepository.getAll().first()
+                jeopardyServer.showFinalCategory(finalRound)
                 call.redirect(GameControls())
             }
             "addPoints" -> {

@@ -1,9 +1,6 @@
 package dk.w4
 
-import dk.w4.Repository.AnswerRepository
-import dk.w4.Repository.CategoryRepository
-import dk.w4.Repository.DatabaseFactory
-import dk.w4.Repository.TeamRepository
+import dk.w4.Repository.*
 import dk.w4.gameserver.JeopardyServer
 import dk.w4.webapp.*
 import io.ktor.application.*
@@ -42,6 +39,7 @@ fun Application.module(testing: Boolean = false) {
     val teamRepository = TeamRepository()
     val categoryRepository = CategoryRepository()
     val answerRepository = AnswerRepository()
+    val finalsRoundRepository = FinalsRoundRepository()
 
     routing {
         // Static feature. Try to access `/static/ktor_logo.svg`
@@ -54,7 +52,7 @@ fun Application.module(testing: Boolean = false) {
         teams(teamRepository)
         categories(categoryRepository)
         answer(answerRepository)
-        gamecontrols(teamRepository, categoryRepository, answerRepository, jeopardyServer)
+        gamecontrols(teamRepository, categoryRepository, answerRepository, finalsRoundRepository, jeopardyServer)
         gameanswer(answerRepository, teamRepository, jeopardyServer)
 
         webSocket("/ws") {
