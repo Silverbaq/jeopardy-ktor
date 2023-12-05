@@ -194,26 +194,17 @@ var imageIndex = 0;
 
 function getRandomImage() {
     var myArray = [
-        "https://img-9gag-fun.9cache.com/photo/aN0Q9Yb_460swp.webp",
-        "https://img-9gag-fun.9cache.com/photo/abr4eB9_460swp.webp",
-        "https://img-9gag-fun.9cache.com/photo/az1K2pm_460swp.webp",
-        "https://img-9gag-fun.9cache.com/photo/ax76oVn_460swp.webp",
-        "https://img-9gag-fun.9cache.com/photo/a6N5nYe_460swp.webp",
-        "https://img-9gag-fun.9cache.com/photo/aj5LBYQ_460swp.webp",
-        "https://img-9gag-fun.9cache.com/photo/aEgAAOe_460swp.webp",
         "https://img-9gag-fun.9cache.com/photo/az1KyoB_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/aNwbLvG_700bwp.webp",
+        "https://img-9gag-fun.9cache.com/photo/anzoOnL_700bwp.webp",
+        "https://img-9gag-fun.9cache.com/photo/aOxW2y2_460swp.webp",
+        "https://img-9gag-fun.9cache.com/photo/aDYv73w_700bwp.webp",
         "https://img-9gag-fun.9cache.com/photo/avo6qzM_460swp.webp",
-        "https://img-9gag-fun.9cache.com/photo/a9R5wAK_460swp.webp",
         "https://img-9gag-fun.9cache.com/photo/aXjV8wV_460swp.webp",
-        "https://img-9gag-fun.9cache.com/photo/aBgVDgz_460swp.webp",
-        "https://img-9gag-fun.9cache.com/photo/am56wBy_460swp.webp",
         "https://img-9gag-fun.9cache.com/photo/ax76KEb_460swp.webp",
-        "https://img-9gag-fun.9cache.com/photo/aXjV3qV_460swp.webp",
-        "https://img-9gag-fun.9cache.com/photo/an52oXV_460swp.webp",
         "https://img-9gag-fun.9cache.com/photo/aMYPLe6_460swp.webp",
         "https://img-9gag-fun.9cache.com/photo/ae5ZB5b_460swp.webp",
-        "https://img-9gag-fun.9cache.com/photo/a4RNyMw_460swp.webp",
-        "https://img-9gag-fun.9cache.com/photo/aQ17zbr_460swp.webp"
+        "https://img-9gag-fun.9cache.com/photo/aQ17zbr_460swp.webp",
     ];
     //return myArray[Math.floor(Math.random() * myArray.length)];
 
