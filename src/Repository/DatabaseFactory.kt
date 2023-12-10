@@ -237,9 +237,9 @@ object DatabaseFactory {
 
             // Final round
             FinalsRounds.insert {
-                it[category] = "Viruses and Malware"
-                it[answer] = "Considered the first PC virus, it targeted IBM PC systems and was spread via floppy disks."
-                it[question] = "What is \"Brain\"?"
+                it[category] = "Big-O Notation"
+                it[answer] = "The \"Merge sort\" algorithm's worst case Big-O runtime"
+                it[question] = "What is \"n * log(n)\"?"
             }
         }
     }
