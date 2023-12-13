@@ -24,13 +24,30 @@ object DatabaseFactory {
             SchemaUtils.create(FinalsRounds)
 
             Teams.insert {
-                it[name] = "team1"
+                it[name] = "* Wildcard *"
                 it[points] = 0
             }
             Teams.insert {
-                it[name] = "team2"
+                it[name] = "App Team"
                 it[points] = 0
             }
+            Teams.insert {
+                it[name] = "Streaming Backend"
+                it[points] = 0
+            }
+            Teams.insert {
+                it[name] = "DSE"
+                it[points] = 0
+            }
+            Teams.insert {
+                it[name] = "CAM"
+                it[points] = 0
+            }
+            Teams.insert {
+                it[name] = "Audience"
+                it[points] = 0
+            }
+
             Categories.insert {
                 it[name] = "Injection Exploits"
             }
