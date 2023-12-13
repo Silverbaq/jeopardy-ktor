@@ -195,11 +195,12 @@ var imageIndex = 0;
 function getRandomImage() {
     var myArray = [
         "https://img-9gag-fun.9cache.com/photo/az1KyoB_460swp.webp",
-        "https://img-9gag-fun.9cache.com/photo/aNwbLvG_700bwp.webp",
-        "https://img-9gag-fun.9cache.com/photo/anzoOnL_700bwp.webp",
+        "https://images.vps.w4.dk/blDZX.webp?h=600",
+        "https://img-9gag-fun.9cache.com/photo/aGE4dGw_700bwp.webp",
+        "https://images.vps.w4.dk/pUqVe.webp?h=600",
         "https://img-9gag-fun.9cache.com/photo/aOxW2y2_460swp.webp",
-        "https://img-9gag-fun.9cache.com/photo/aDYv73w_700bwp.webp",
-        "https://img-9gag-fun.9cache.com/photo/avo6qzM_460swp.webp",
+        "https://images.vps.w4.dk/VwSQo.webp?h=600",
+        //"https://img-9gag-fun.9cache.com/photo/avo6qzM_460swp.webp",
         "https://img-9gag-fun.9cache.com/photo/aXjV8wV_460swp.webp",
         "https://img-9gag-fun.9cache.com/photo/ax76KEb_460swp.webp",
         "https://img-9gag-fun.9cache.com/photo/aMYPLe6_460swp.webp",
